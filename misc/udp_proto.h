@@ -101,7 +101,7 @@ static uint16_t udp_checksum (const struct udp_header *header, const uint8_t *pa
     return hton16(t);
 }
 
-static uint16_t udp_ip6_checksum (const struct udp_header *header, const uint8_t *payload, uint16_t payload_len, const uint8_t *source_addr, const uint8_t *dest_addr)
+static uint16_t VARIABLE_IS_NOT_USED udp_ip6_checksum (const struct udp_header *header, const uint8_t *payload, uint16_t payload_len, const uint8_t *source_addr, const uint8_t *dest_addr)
 {
     uint32_t t = 0;
     
@@ -147,7 +147,7 @@ static int udp_check (const uint8_t *data, int data_len, struct udp_header *out_
     ASSERT(out_payload_len)
     
     // parse UDP header
-    if (data_len < sizeof(struct udp_header)) {
+    if (data_len < (int)sizeof(struct udp_header)) {
         return 0;
     }
     memcpy(out_header, data, sizeof(*out_header));
@@ -155,7 +155,7 @@ static int udp_check (const uint8_t *data, int data_len, struct udp_header *out_
     data_len -= sizeof(*out_header);
     
     // verify UDP payload
-    int udp_length = ntoh16(out_header->length);
+    uint16_t udp_length = ntoh16(out_header->length);
     if (udp_length < sizeof(*out_header)) {
         return 0;
     }

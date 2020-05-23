@@ -99,7 +99,7 @@ static int ipv4_check (uint8_t *data, int data_len, struct ipv4_header *out_head
     ASSERT(out_payload_len)
     
     // check base header
-    if (data_len < sizeof(struct ipv4_header)) {
+    if (data_len < (int)sizeof(struct ipv4_header)) {
         return 0;
     }
     memcpy(out_header, data, sizeof(*out_header));

@@ -53,7 +53,7 @@ struct ipv6_header {
 } B_PACKED;
 B_END_PACKED
 
-static int ipv6_check (uint8_t *data, int data_len, struct ipv6_header *out_header, uint8_t **out_payload, int *out_payload_len)
+static int VARIABLE_IS_NOT_USED ipv6_check (uint8_t *data, int data_len, struct ipv6_header *out_header, uint8_t **out_payload, int *out_payload_len)
 {
     ASSERT(data_len >= 0)
     ASSERT(out_header)
@@ -61,7 +61,7 @@ static int ipv6_check (uint8_t *data, int data_len, struct ipv6_header *out_head
     ASSERT(out_payload_len)
     
     // check base header
-    if (data_len < sizeof(struct ipv6_header)) {
+    if (data_len < (int)sizeof(struct ipv6_header)) {
         return 0;
     }
     memcpy(out_header, data, sizeof(*out_header));

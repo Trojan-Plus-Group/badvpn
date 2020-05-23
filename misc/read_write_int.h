@@ -42,36 +42,36 @@ static uint16_t badvpn_read_be16 (const char *c_ptr);
 static uint32_t badvpn_read_be32 (const char *c_ptr);
 static uint64_t badvpn_read_be64 (const char *c_ptr);
 
-static void badvpn_write_le8 (uint8_t x, char *c_ptr);
-static void badvpn_write_le16 (uint16_t x, char *c_ptr);
-static void badvpn_write_le32 (uint32_t x, char *c_ptr);
-static void badvpn_write_le64 (uint64_t x, char *c_ptr);
+static void VARIABLE_IS_NOT_USED badvpn_write_le8 (uint8_t x, char *c_ptr);
+static void VARIABLE_IS_NOT_USED badvpn_write_le16 (uint16_t x, char *c_ptr);
+static void VARIABLE_IS_NOT_USED badvpn_write_le32 (uint32_t x, char *c_ptr);
+static void VARIABLE_IS_NOT_USED badvpn_write_le64 (uint64_t x, char *c_ptr);
 
-static void badvpn_write_be8 (uint8_t x, char *c_ptr);
-static void badvpn_write_be16 (uint16_t x, char *c_ptr);
-static void badvpn_write_be32 (uint32_t x, char *c_ptr);
-static void badvpn_write_be64 (uint64_t x, char *c_ptr);
+static void VARIABLE_IS_NOT_USED badvpn_write_be8 (uint8_t x, char *c_ptr);
+static void VARIABLE_IS_NOT_USED badvpn_write_be16 (uint16_t x, char *c_ptr);
+static void VARIABLE_IS_NOT_USED badvpn_write_be32 (uint32_t x, char *c_ptr);
+static void VARIABLE_IS_NOT_USED badvpn_write_be64 (uint64_t x, char *c_ptr);
 
-static uint8_t badvpn_read_le8 (const char *c_ptr)
+static uint8_t VARIABLE_IS_NOT_USED badvpn_read_le8 (const char *c_ptr)
 {
     const uint8_t *ptr = (const uint8_t *)c_ptr;
     return ((uint8_t)ptr[0] << 0);
 }
 
-static uint16_t badvpn_read_le16 (const char *c_ptr)
+static uint16_t VARIABLE_IS_NOT_USED badvpn_read_le16 (const char *c_ptr)
 {
     const uint8_t *ptr = (const uint8_t *)c_ptr;
     return ((uint16_t)ptr[1] << 8) | ((uint16_t)ptr[0] << 0);
 }
 
-static uint32_t badvpn_read_le32 (const char *c_ptr)
+static uint32_t VARIABLE_IS_NOT_USED badvpn_read_le32 (const char *c_ptr)
 {
     const uint8_t *ptr = (const uint8_t *)c_ptr;
     return ((uint32_t)ptr[3] << 24) | ((uint32_t)ptr[2] << 16) |
            ((uint32_t)ptr[1] <<  8) | ((uint32_t)ptr[0] <<  0);
 }
 
-static uint64_t badvpn_read_le64 (const char *c_ptr)
+static uint64_t VARIABLE_IS_NOT_USED badvpn_read_le64 (const char *c_ptr)
 {
     const uint8_t *ptr = (const uint8_t *)c_ptr;
     return ((uint64_t)ptr[7] << 56) | ((uint64_t)ptr[6] << 48) |
@@ -80,26 +80,26 @@ static uint64_t badvpn_read_le64 (const char *c_ptr)
            ((uint64_t)ptr[1] <<  8) | ((uint64_t)ptr[0] <<  0);
 }
 
-static uint8_t badvpn_read_be8 (const char *c_ptr)
+static uint8_t VARIABLE_IS_NOT_USED badvpn_read_be8 (const char *c_ptr)
 {
     const uint8_t *ptr = (const uint8_t *)c_ptr;
     return ((uint8_t)ptr[0] << 0);
 }
 
-static uint16_t badvpn_read_be16 (const char *c_ptr)
+static uint16_t VARIABLE_IS_NOT_USED badvpn_read_be16 (const char *c_ptr)
 {
     const uint8_t *ptr = (const uint8_t *)c_ptr;
     return ((uint16_t)ptr[0] << 8) | ((uint16_t)ptr[1] << 0);
 }
 
-static uint32_t badvpn_read_be32 (const char *c_ptr)
+static uint32_t VARIABLE_IS_NOT_USED badvpn_read_be32 (const char *c_ptr)
 {
     const uint8_t *ptr = (const uint8_t *)c_ptr;
     return ((uint32_t)ptr[0] << 24) | ((uint32_t)ptr[1] << 16) |
            ((uint32_t)ptr[2] <<  8) | ((uint32_t)ptr[3] <<  0);
 }
 
-static uint64_t badvpn_read_be64 (const char *c_ptr)
+static uint64_t VARIABLE_IS_NOT_USED badvpn_read_be64 (const char *c_ptr)
 {
     const uint8_t *ptr = (const uint8_t *)c_ptr;
     return ((uint64_t)ptr[0] << 56) | ((uint64_t)ptr[1] << 48) |
@@ -108,20 +108,20 @@ static uint64_t badvpn_read_be64 (const char *c_ptr)
            ((uint64_t)ptr[6] <<  8) | ((uint64_t)ptr[7] <<  0);
 }
 
-static void badvpn_write_le8 (uint8_t x, char *c_ptr)
+static void VARIABLE_IS_NOT_USED badvpn_write_le8 (uint8_t x, char *c_ptr)
 {
     uint8_t *ptr = (uint8_t *)c_ptr;
     ptr[0] = x >> 0;
 }
 
-static void badvpn_write_le16 (uint16_t x, char *c_ptr)
+static void VARIABLE_IS_NOT_USED badvpn_write_le16 (uint16_t x, char *c_ptr)
 {
     uint8_t *ptr = (uint8_t *)c_ptr;
     ptr[1] = x >> 8;
     ptr[0] = x >> 0;
 }
 
-static void badvpn_write_le32 (uint32_t x, char *c_ptr)
+static void VARIABLE_IS_NOT_USED badvpn_write_le32 (uint32_t x, char *c_ptr)
 {
     uint8_t *ptr = (uint8_t *)c_ptr;
     ptr[3] = x >> 24;
@@ -130,7 +130,7 @@ static void badvpn_write_le32 (uint32_t x, char *c_ptr)
     ptr[0] = x >> 0;
 }
 
-static void badvpn_write_le64 (uint64_t x, char *c_ptr)
+static void VARIABLE_IS_NOT_USED badvpn_write_le64 (uint64_t x, char *c_ptr)
 {
     uint8_t *ptr = (uint8_t *)c_ptr;
     ptr[7] = x >> 56;
@@ -143,20 +143,20 @@ static void badvpn_write_le64 (uint64_t x, char *c_ptr)
     ptr[0] = x >> 0;
 }
 
-static void badvpn_write_be8 (uint8_t x, char *c_ptr)
+static void VARIABLE_IS_NOT_USED badvpn_write_be8 (uint8_t x, char *c_ptr)
 {
     uint8_t *ptr = (uint8_t *)c_ptr;
     ptr[0] = x >> 0;
 }
 
-static void badvpn_write_be16 (uint16_t x, char *c_ptr)
+static void VARIABLE_IS_NOT_USED badvpn_write_be16 (uint16_t x, char *c_ptr)
 {
     uint8_t *ptr = (uint8_t *)c_ptr;
     ptr[0] = x >> 8;
     ptr[1] = x >> 0;
 }
 
-static void badvpn_write_be32 (uint32_t x, char *c_ptr)
+static void VARIABLE_IS_NOT_USED badvpn_write_be32 (uint32_t x, char *c_ptr)
 {
     uint8_t *ptr = (uint8_t *)c_ptr;
     ptr[0] = x >> 24;
@@ -165,7 +165,7 @@ static void badvpn_write_be32 (uint32_t x, char *c_ptr)
     ptr[3] = x >> 0;
 }
 
-static void badvpn_write_be64 (uint64_t x, char *c_ptr)
+static void VARIABLE_IS_NOT_USED badvpn_write_be64 (uint64_t x, char *c_ptr)
 {
     uint8_t *ptr = (uint8_t *)c_ptr;
     ptr[0] = x >> 56;
